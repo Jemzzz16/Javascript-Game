@@ -75,3 +75,11 @@ star.src = "https://res.cloudinary.com/dytmcam8b/image/upload/v1561725934/virtua
                 hunger++;
             }
         }
+
+function clickedTreatButton() {
+//Increase pet happiness
+pet_info.happiness = pet_info.happiness + 1;
+// Increase pet weight
+pet_info.weight = pet_info.weight + 1;
+checkAndUpdatePetInfoInHtml();
+}
