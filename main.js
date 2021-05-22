@@ -3,11 +3,16 @@ const originalImage = document.querySelector('#dave-normal')
 const feed = document.querySelector('#feedhim');
 const fedImage = document.querySelector('#davefed');
 
-const love = document.querySelector('#lovehim');
+const love = document.querySelector('#dave-normal');
 const loveImage = document.querySelector('#daveloved');
 
 const fire = document.querySelector('#firehim');
 const fireImage = document.querySelector('#davefire');
+
+daveFed = () => {
+  originalImage.style.opacity = "0"
+  return fedImage.style.opacity = "100%"
+};
 
 daveLoved = () => {
   originalImage.style.opacity = "0"
@@ -19,10 +24,10 @@ daveFired = () => {
   return fireImage.style.opacity = "100%"
 };
 
-daveFed = () => {
-  originalImage.style.opacity = "0"
-  return fedImage.style.opacity = "100%"
-};
+feed.addEventListener(('click'), (taregt) => {
+  daveFed()
+  console.log(fedImage);
+});
 
 love.addEventListener(('click'), (taregt) => {
   daveLoved()
@@ -30,36 +35,15 @@ love.addEventListener(('click'), (taregt) => {
 });
 
 
-fire.addEventListener(('click'), (taregt) => {
-  daveFired()
-  console.log(fireImage);
-});
 
-feed.addEventListener(('click'), (taregt) => {
-  daveFed()
-  console.log(fedImage);
-});
+//setTimeout(daveFired(), 5*1000);
+
+// fire.addEventListener(('click'), (taregt) => {
+//   daveFired()
+//   console.log(fireImage);
+// });
 
 
 
 
-
-// function changeImage() {
-//   var image = document.getElementById('myImage');
-//   if (image.src.match("colorbottel")) {
-//       image.src = "waterbottel.gif";
-//   }
-//   else {
-//       image.src = "colorbottel.gif";
-//   }
-// }
-
-// 
-
-// numbers.forEach((number) => {
-//   number.addEventListener(("click"), (event) => {
-//     inputNumber(event.target.value)
-//     updateScreen(secondNumber)
-//   })
-// })
-
+// settimeout() - can be called for the fire image so after a certain amount of time this image will show 
