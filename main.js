@@ -1,3 +1,5 @@
+const originalImage = document.querySelector('#dave-normal')
+
 const feed = document.querySelector('#feedhim');
 const fedImage = document.querySelector('#davefed');
 
@@ -8,29 +10,32 @@ const fire = document.querySelector('#firehim');
 const fireImage = document.querySelector('#davefire');
 
 daveLoved = () => {
-  return loveImage
+  originalImage.style.opacity = "0"
+  return loveImage.style.opacity = "100%"
 };
 
 daveFired = () => {
-  return fireImage
+  originalImage.style.opacity = "0"
+  return fireImage.style.opacity = "100%"
 };
 
 daveFed = () => {
-  return fedImage
+  originalImage.style.opacity = "0"
+  return fedImage.style.opacity = "100%"
 };
 
-feed.addEventListener(('click'), (taregt) => {
+love.addEventListener(('click'), (taregt) => {
   daveLoved()
   console.log(loveImage);
 });
 
 
-love.addEventListener(('click'), (taregt) => {
+fire.addEventListener(('click'), (taregt) => {
   daveFired()
   console.log(fireImage);
 });
 
-fire.addEventListener(('click'), (taregt) => {
+feed.addEventListener(('click'), (taregt) => {
   daveFed()
   console.log(fedImage);
 });
