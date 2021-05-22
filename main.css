@@ -5,7 +5,20 @@
   font-family: "Indie Flower", cursive;
 }
 
-.dave {
+.heading h2 {
+  font-weight: bolder;
+}
+.heading p {
+  font-size: 1.5rem;
+}
+
+#egg-normal {
+  position: absolute;
+  opacity: 100%;
+  z-index: 2;
+}
+
+.egg {
   position: absolute;
   opacity: 0;
   z-index: 1;
@@ -13,7 +26,14 @@
 
 #dave-normal {
   position: absolute;
+  opacity: 100%;
   z-index: 2;
+}
+
+.dave {
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
 }
 
 .buttons button {
@@ -26,21 +46,40 @@
 }
 
 .heading {
-  height: 50px;
+  height: 80px;
   width: auto;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.images-div {
+  height: 250px;
+  width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.dragons {
-  height: 300px;
+.egg-images {
+  height: 250px;
   width: auto;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  z-index: 3;
+}
+
+.dragon-images {
+  height: 250px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 2;
 }
 
 .buttons {

@@ -1,23 +1,43 @@
-
-
 .heading {
-  height: 50px;
+  height: 80px;
   width: auto;
-  position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
  
 }
 
-.dragons {
-  height: 300px;
+.images-div {
+  height: 250px;
   width: auto;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
- 
+
+}
+
+.egg-images {
+  height: 250px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  z-index: 3;
+
+}
+
+.dragon-images {
+  height: 250px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  position: absolute;
+  z-index: 2;
 }
 
 .buttons {
