@@ -15,25 +15,21 @@
 #egg-normal {
   position: absolute;
   opacity: 100%;
-  z-index: 2;
 }
 
 .egg {
   position: absolute;
   opacity: 0;
-  z-index: 1;
 }
 
 #dave-normal {
   position: absolute;
   opacity: 100%;
-  z-index: 2;
 }
 
 .dave {
   position: absolute;
   opacity: 0;
-  z-index: 1;
 }
 
 .buttons button {
@@ -43,6 +39,10 @@
 .buttons input {
   height: 80%;
   width: auto;
+}
+
+#egg-button {
+  opacity: 0;
 }
 
 .heading {
@@ -55,7 +55,7 @@
 }
 
 .images-div {
-  height: 250px;
+  height: 200px;
   width: auto;
   display: flex;
   justify-content: center;
@@ -63,13 +63,11 @@
 }
 
 .egg-images {
-  height: 250px;
+  height: 200px;
   width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  z-index: 3;
 }
 
 .dragon-images {
@@ -78,8 +76,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  z-index: 2;
 }
 
 .buttons {

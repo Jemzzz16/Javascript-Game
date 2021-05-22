@@ -10,34 +10,32 @@
 #egg-normal { 
   position: absolute;
   opacity: 100%;
-  z-index: 2;
 }
 
 .egg {
   position: absolute;
   opacity: 0;
-  z-index: 1;
 } 
-
 #dave-normal {
   position: absolute;
   opacity: 100%;
-  z-index: 2;
-  
 }
 .dave {
   position: absolute;
   opacity: 0;
-  z-index: 1;
 }
 
 .buttons {
   button {
-  height: 50px;
-  width: auto;
+    height: 50px;
+    width: auto;
   }
   input {
     height: 80%;
     width: auto;
   }
+}
+
+#egg-button {
+  opacity: 0;
 }
