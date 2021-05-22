@@ -8,20 +8,27 @@
   <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <div class="heading">
-      <h4>This is Dave</h4>
-        <p>Your new virtual pet Dragon</p>
-    </div>
+    <section class="heading">
+      <h3>This is Dave</h3>
+      <br>
+      <br>
+      <p>Your new virtual pet Dragon</p>
+    </section>
 
-    <div class="dragon-image">
-      <img class="dave" src="images/Dave normal.png" alt="#">
-      <img class="dave" src="images/Dave Fed.png" alt="#">
-    </div>
-    <div class="buttons">
-      <button class="feedhim">Feed him</button>
-      <button class="lovehim">Love him</button>
-      <button class="firehim">Smoke?</button>
-    </div>
+    <section class="dragons">
+      <input type="image" id="dave-normal" src="images/Dave normal.png" alt="#"/>
+      <img class="dave" id="davefed" src="images/Dave Fed.png" alt="#">
+      <img class="dave" id="daveloved" src="images/Dave loved.png" alt="#">
+      <img class="dave" id="davefire" src="images/Dave fire.png.png" alt="#">
+      <img class="dave" id="davedead" src="images/Dave dead.png.png" alt="#">
+    </section>
+
+    <section class="buttons">
+      <input type="image"  id="dontfeedhim" src="images/Steak.png" alt="#"/>
+      <button id="feedhim">Feed him</button>
+      <button id="lovehim">Love him</button>
+      <button id="firehim">Smoke?</button>
+    </section>
 
   <script src="./main.js"></script>
   </body>

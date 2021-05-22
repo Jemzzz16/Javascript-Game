@@ -1,0 +1,24 @@
+ .dave {
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+}
+
+#dave-normal {
+position: absolute;
+z-index: 2;
+}
+
+.buttons {
+
+  button {
+  height: 50px;
+  width: auto;
+  }
+
+  input {
+    height: 80%;
+    width: auto;
+  }
+}
+

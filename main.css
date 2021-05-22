@@ -5,21 +5,48 @@
   font-family: "Indie Flower", cursive;
 }
 
+.dave {
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+}
+
+#dave-normal {
+  position: absolute;
+  z-index: 2;
+}
+
+.buttons button {
+  height: 50px;
+  width: auto;
+}
+.buttons input {
+  height: 80%;
+  width: auto;
+}
+
 .heading {
+  height: 50px;
+  width: auto;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.dragon-image {
+.dragons {
+  height: 300px;
+  width: auto;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .buttons {
+  height: 80px;
+  width: auto;
+  position: relative;
   display: flex;
-  justify-content: space-between 5%;
   justify-content: center;
-  align-items: center;
 }

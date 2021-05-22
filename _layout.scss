@@ -1,18 +1,30 @@
+
+
 .heading {
-display: flex;
-justify-content: center;
-align-items: center;
+  height: 50px;
+  width: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
 }
 
-.dragon-image {
-display: flex;
-justify-content: center;
-align-items: center;
+.dragons {
+  height: 300px;
+  width: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
 }
 
 .buttons {
-display: flex;
-justify-content: space-between 5%;
-justify-content: center;
-align-items: center;
+  height: 80px;
+  width: auto;  
+  position: relative;
+  display: flex;
+  justify-content: center;
+  
 }
