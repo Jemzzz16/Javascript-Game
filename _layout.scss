@@ -5,32 +5,40 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
- 
-}
-
-.images-div {
-  height: 200px;
-  width: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // position: relative;
 }
 
 .egg-images {
-  height: 200px;
-  width: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.dragon-images {
   height: 250px;
   width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+
+}
+// .dragon-images {
+//   height: 250px;
+//   width: auto;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+.egg-div {
+  height: 150px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.dragon-div {
+  height: 250px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
 }
 
 .buttons {

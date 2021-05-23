@@ -5,6 +5,12 @@
   font-family: "Indie Flower", cursive;
 }
 
+body {
+  background-image: url("images/Background.png");
+  background-size: cover;
+  z-index: 1;
+}
+
 .heading h2 {
   font-weight: bolder;
 }
@@ -12,9 +18,30 @@
   font-size: 1.5rem;
 }
 
+.egg-div {
+  opacity: 100%;
+}
+
+.dragon-div {
+  opacity: 0;
+}
+
 #egg-normal {
   position: absolute;
   opacity: 100%;
+  z-index: 3;
+}
+
+#egg-slightly-cracked {
+  position: absolute;
+  opacity: 0;
+  z-index: 2;
+}
+
+#egg-cracked {
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
 }
 
 .egg {
@@ -25,11 +52,13 @@
 #dave-normal {
   position: absolute;
   opacity: 100%;
+  z-index: 2;
 }
 
 .dave {
   position: absolute;
   opacity: 0;
+  z-index: 1;
 }
 
 .buttons button {
@@ -41,10 +70,6 @@
   width: auto;
 }
 
-#egg-button {
-  opacity: 0;
-}
-
 .heading {
   height: 80px;
   width: auto;
@@ -54,28 +79,30 @@
   justify-content: center;
 }
 
-.images-div {
-  height: 200px;
-  width: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .egg-images {
-  height: 200px;
-  width: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.dragon-images {
   height: 250px;
   width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.egg-div {
+  height: 150px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.dragon-div {
+  height: 250px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
 }
 
 .buttons {
