@@ -9,6 +9,7 @@ const dragonDiv = document.querySelector('.dragon-div')
 
 const originalImage = document.querySelector('#dave-normal')
 const flapImage = document.querySelector('#daveflap')
+const deadImage = document.querySelector('#davedead')
 
 const feed = document.querySelector('#feedhim');
 const fedImage = document.querySelector('#davefed');
@@ -18,6 +19,7 @@ const loveImage = document.querySelector('#daveloved');
 
 const fire = document.querySelector('#firehim');
 const fireImage = document.querySelector('#davefire');
+
 
 
 const removePicture = (element) => {
@@ -30,9 +32,10 @@ const pictureOnTop = (element) => {
 }
 ////////////////////////////////////////////////////////////////////
 
+// let i = 0
 // const eggBtn = document.querySelector('#egg-button')
 // for(i = 0; i < eggBtn.length; i++) {
-//   eggBtn[i].addEventListener(('click'), () => {
+//   eggBtn.addEventListener(('click'), () => {
 //     firstCrack()
 //     console.log(firstCrack());
 //   })  
@@ -52,7 +55,6 @@ const finalCrack = () => {
   removePicture(eggDiv)
   pictureOnTop(dragonDiv)
 };
-
 
 ////////////////////////////////////////////////////////////////////
 
@@ -75,6 +77,7 @@ daveNormal = () => {
   removePicture(fedImage)
   removePicture(loveImage)
   removePicture(fireImage)
+  removePicture(flapImage)
   pictureOnTop(originalImage)
 };
 daveFed = () => {
@@ -95,25 +98,60 @@ daveFired = () => {
   removePicture(fedImage)
   pictureOnTop(fireImage)
 };
+daveDead = () => {
+  removePicture(originalImage)
+  removePicture(loveImage)
+  removePicture(fedImage)
+  removePicture(fireImage)
+  pictureOnTop(deadImage)
+};
 // daveFlap = () => {
-//   originalImage.style.opacity = "0"
-//   return flapImage.style.opacity = "100"
+//   removePicture(originalImage)
+//   removePicture(loveImage)
+//   removePicture(fedImage)
+//   removePicture(fireImage)
+//   pictureOnTop(flapImage)
 // };
 
 ////////////////////////////////////////////////////////////////////
 
 feed.addEventListener(('click'), () => {
   daveFed()
+  daveFlap()
   setTimeout(daveNormal, 1000)
-  console.log(fedImage);
 });
 
 love.addEventListener(('click'), () => {
   daveLoved()
   setTimeout(daveNormal, 1000)
-  console.log(loveImage);
 });
 
+
+
+
+// eggCracked.addEventListener(('click'), () => {
+//   setTimeout(daveFired, 5000)
+//   setTimeout(daveNormal, 2000)
+// })
+
+eggCracked.addEventListener(('click'), () => {
+  setTimeout(daveDead, 10000)
+
+  const deadDave = () => {
+  alert("FEED ME");
+}
+})
+
+//Clicking on a "Feed" button will restore vitamin and health to your pet.
+daveNormal.addEventListener("click",function(){
+  if(daveNormal ==+ true)
+  {}
+
+// function setColor() {
+//   var x = document.body;
+//   x.style.backgroundColor = x.style.backgroundColor == "yellow" ? "pink" : "yellow";
+// }
+ 
 // window.addEventListener('load', (event) => {
 //   setTimeout(daveFired, alertFunc, 1000)
 //   daveNormal()
