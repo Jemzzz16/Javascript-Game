@@ -19,6 +19,15 @@ const loveImage = document.querySelector('#daveloved');
 const fire = document.querySelector('#firehim');
 const fireImage = document.querySelector('#davefire');
 
+
+const removePicture = (element) => {
+  element.style.zIndex = '1'
+  element.style.opacity = '0'
+}
+const pictureOnTop = (element) => {
+  element.style.zIndex = '3'
+  element.style.opacity = '100%'
+}
 ////////////////////////////////////////////////////////////////////
 
 // const eggBtn = document.querySelector('#egg-button')
@@ -30,21 +39,22 @@ const fireImage = document.querySelector('#davefire');
 // };
 
 ////////////////////////////////////////////////////////////////////
-// EGGS
+// EGGS    
 const firstCrack = () => {
-  eggNormal.style.zIndex = "1"
-  eggSlightCrack.style.opacity = "100%"
-  eggSlightCrack.style.zIndex = '3'
-};          
+  removePicture(eggNormal)
+  pictureOnTop(eggSlightCrack)
+};  
 const secondCrack = () => {
-  eggSlightCrack.style.zIndex = '1'
-  eggCracked.style.opacity = "100%"
-  eggCracked.style.zIndex = '3'
+  removePicture(eggSlightCrack)
+  pictureOnTop(eggCracked)
 };
 const finalCrack = () => {
-  eggDiv.style.opacity = "0"
-  return dragonDiv.style.opacity = "100%"
+  removePicture(eggDiv)
+  pictureOnTop(dragonDiv)
 };
+
+
+////////////////////////////////////////////////////////////////////
 
 eggNormal.addEventListener(('click'), () => {
   firstCrack()
@@ -61,22 +71,30 @@ eggCracked.addEventListener(('click'), () => {
 
 ////////////////////////////////////////////////////////////////////
 // DAVE MOOD
+daveNormal = () => {
+  removePicture(fedImage)
+  removePicture(loveImage)
+  removePicture(fireImage)
+  pictureOnTop(originalImage)
+};
 daveFed = () => {
-  originalImage.style.opacity = "0"
-  return fedImage.style.opacity = "100%"
+  removePicture(originalImage)
+  removePicture(loveImage)
+  removePicture(fireImage)
+  pictureOnTop(fedImage)
 };
 daveLoved = () => {
-  originalImage.style.opacity = "0"
-  return loveImage.style.opacity = "100%"
+  removePicture(originalImage)
+  removePicture(fedImage)
+  removePicture(fireImage)
+  pictureOnTop(loveImage)
 };
-
-if (daveloved() = true )
-
-
-// daveFired = () => {
-//   originalImage.style.opacity = "0"
-//   return fireImage.style.opacity = "100%"
-// };
+daveFired = () => {
+  removePicture(originalImage)
+  removePicture(loveImage)
+  removePicture(fedImage)
+  pictureOnTop(fireImage)
+};
 // daveFlap = () => {
 //   originalImage.style.opacity = "0"
 //   return flapImage.style.opacity = "100"
@@ -86,13 +104,25 @@ if (daveloved() = true )
 
 feed.addEventListener(('click'), () => {
   daveFed()
+  setTimeout(daveNormal, 1000)
   console.log(fedImage);
 });
 
 love.addEventListener(('click'), () => {
   daveLoved()
+  setTimeout(daveNormal, 1000)
   console.log(loveImage);
 });
+
+// window.addEventListener('load', (event) => {
+//   setTimeout(daveFired, alertFunc, 1000)
+//   daveNormal()
+//   console.log(daveFired);
+// });
+
+// const alertFunc = () => {
+//   alert("FEED ME");
+// }
 
 // setInterval(daveFlap(), 3*1000);
 
@@ -102,5 +132,3 @@ love.addEventListener(('click'), () => {
 //   daveFired()
 //   console.log(fireImage);
 // });
-
-// settimeout() - can be called for the fire image so after a certain amount of time this image will show 
