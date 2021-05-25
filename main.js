@@ -8,7 +8,7 @@ const dragonDiv = document.querySelector('.dragon-div')
 
 
 const originalImage = document.querySelector('#dave-normal')
-const flapImage = document.querySelector('#daveflap')
+//const flapImage = document.querySelector('#daveflap')
 const deadImage = document.querySelector('#davedead')
 
 const feed = document.querySelector('#feedhim');
@@ -57,7 +57,7 @@ const finalCrack = () => {
 };
 
 ////////////////////////////////////////////////////////////////////
-
+/// EGG EVENTS
 eggNormal.addEventListener(('click'), () => {
   firstCrack()
   console.log(firstCrack);
@@ -77,14 +77,17 @@ daveNormal = () => {
   removePicture(fedImage)
   removePicture(loveImage)
   removePicture(fireImage)
-  removePicture(flapImage)
+  //removePicture(flapImage)
   pictureOnTop(originalImage)
+
+  setTimeout(daveFired, 5000)
 };
 daveFed = () => {
   removePicture(originalImage)
   removePicture(loveImage)
   removePicture(fireImage)
   pictureOnTop(fedImage)
+  setTimeout(daveNormal, 1000)
 };
 daveLoved = () => {
   removePicture(originalImage)
@@ -97,6 +100,7 @@ daveFired = () => {
   removePicture(loveImage)
   removePicture(fedImage)
   pictureOnTop(fireImage)
+  // setTimeout(daveDead, 5000)
 };
 daveDead = () => {
   removePicture(originalImage)
@@ -114,49 +118,74 @@ daveDead = () => {
 // };
 
 ////////////////////////////////////////////////////////////////////
-
+/// FEED + LOVE
 feed.addEventListener(('click'), () => {
+  clearTimeout(daveNormal)
   daveFed()
-  daveFlap()
-  setTimeout(daveNormal, 1000)
 });
-
 love.addEventListener(('click'), () => {
   daveLoved()
   setTimeout(daveNormal, 1000)
 });
+eggCracked.addEventListener(('click'), () => {
+  daveNormal()
+});
+////////////////////////////////////////////////////////////////////
 
+
+
+// if(daveNormal === true) {
+  //   setTimeout(event, 5000); 
+  // }else if (feed === true){
+  //  clearTimeout(event)
+  // }else  setTimeout(event, 5000)
+
+
+
+// const fireUp = () => {
+//   if(fireUp === true) {
+//     fireUp()
+//   }else if (feed === true) {
+//     clearTimeout(fireUp)
+//   }
+// } 
+
+
+// if feed is true return normal
+// if fire is true for 5 secs return dead
+// if feed is false return fire
 
 
 
 // eggCracked.addEventListener(('click'), () => {
-//   setTimeout(daveFired, 5000)
-//   setTimeout(daveNormal, 2000)
-// })
-
-eggCracked.addEventListener(('click'), () => {
-  setTimeout(daveDead, 10000)
-
-  const deadDave = () => {
-  alert("FEED ME");
-}
-})
-
-//Clicking on a "Feed" button will restore vitamin and health to your pet.
-daveNormal.addEventListener("click",function(){
-  if(daveNormal ==+ true)
-  {}
-
-// function setColor() {
-//   var x = document.body;
-//   x.style.backgroundColor = x.style.backgroundColor == "yellow" ? "pink" : "yellow";
-// }
- 
-// window.addEventListener('load', (event) => {
-//   setTimeout(daveFired, alertFunc, 1000)
-//   daveNormal()
-//   console.log(daveFired);
+//   setTimeout(daveDead, 10000)
 // });
+
+
+// feed.addEventListener(('click'), () => {
+//   if (daveFed === true){
+//     clearTimeout(resetFire)
+//   } else if (daveDead === true)
+//     setTimeout(resetDead)
+// });
+// needs to reset daveDead
+////// can you add things in a class and call the class when items in that class are clicked on? that way reducing code size.
+
+// let to change event listner 
+
+// Array.from(elements).forEach(function(element) {
+//   element.addEventListener('click', myFunction);
+// });
+
+
+//Clicking on a "Fed or fire" button will rest timer for fire and death
+// const resetDeath = () => {
+//   if(daveNormal === true) {
+//     clearTimeout()
+//   } else if (daveFired === true)
+//   clearTimeout()
+// }
+
 
 // const alertFunc = () => {
 //   alert("FEED ME");
