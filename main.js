@@ -2,10 +2,8 @@ const eggNormal = document.querySelector('#egg-normal')
 const eggSlightCrack = document.querySelector('#egg-slightly-cracked')
 const eggCracked = document.querySelector('#egg-cracked')
 
-
 const eggDiv = document.querySelector('.egg-div')
 const dragonDiv = document.querySelector('.dragon-div')
-
 
 const originalImage = document.querySelector('#dave-normal')
 //const flapImage = document.querySelector('#daveflap')
@@ -58,57 +56,57 @@ const finalCrack = () => {
 
 ////////////////////////////////////////////////////////////////////
 /// EGG EVENTS
-eggNormal.addEventListener(('click'), () => {
-  firstCrack()
-  console.log(firstCrack);
+let eggClick = 0
+eggNormal.addEventListener('click', () => {
+  eggClick++
+  if (eggClick === 5) {
+    return firstCrack()
+  }
 });
-eggSlightCrack.addEventListener(('click'), () => {
-  secondCrack()
-  console.log(secondCrack);
+eggSlightCrack.addEventListener('click', () => {
+  eggClick++
+  if (eggClick === 5) {
+    secondCrack()
+  }
 });
-eggCracked.addEventListener(('click'), () => {
-  finalCrack()
-  console.log(finalCrack);
+eggCracked.addEventListener('click', () => {
+  eggClick++
+  if (eggClick === 2) {
+    finalCrack()
+  }
 });
-
 ////////////////////////////////////////////////////////////////////
 // DAVE MOOD
 daveNormal = () => {
   removePicture(fedImage)
-  removePicture(loveImage)
   removePicture(fireImage)
-  //removePicture(flapImage)
+  removePicture(loveImage)
   pictureOnTop(originalImage)
-
-  setTimeout(daveFired, 5000)
 };
 daveFed = () => {
   removePicture(originalImage)
-  removePicture(loveImage)
   removePicture(fireImage)
+  removePicture(loveImage)
   pictureOnTop(fedImage)
-  setTimeout(daveNormal, 1000)
 };
 daveLoved = () => {
   removePicture(originalImage)
-  removePicture(fedImage)
   removePicture(fireImage)
+  removePicture(fedImage)
   pictureOnTop(loveImage)
 };
 daveFired = () => {
   removePicture(originalImage)
-  removePicture(loveImage)
   removePicture(fedImage)
+  removePicture(loveImage)
   pictureOnTop(fireImage)
-  // setTimeout(daveDead, 5000)
 };
-daveDead = () => {
-  removePicture(originalImage)
-  removePicture(loveImage)
-  removePicture(fedImage)
-  removePicture(fireImage)
-  pictureOnTop(deadImage)
-};
+// daveDead = () => {
+//   removePicture(fedImage)
+//   removePicture(fireImage)
+//   removePicture(loveImage)
+//   pictureOnTop(deadImage)
+// };
 // daveFlap = () => {
 //   removePicture(originalImage)
 //   removePicture(loveImage)
@@ -119,26 +117,27 @@ daveDead = () => {
 
 ////////////////////////////////////////////////////////////////////
 /// FEED + LOVE
+// eggCracked.addEventListener(('click'), () => {
+//   daveNormal()
+// });
+
+
+
 feed.addEventListener(('click'), () => {
-  clearTimeout(daveNormal)
   daveFed()
 });
 love.addEventListener(('click'), () => {
   daveLoved()
-  setTimeout(daveNormal, 1000)
 });
-eggCracked.addEventListener(('click'), () => {
-  daveNormal()
-});
+
+
 ////////////////////////////////////////////////////////////////////
 
 
 
-// if(daveNormal === true) {
-  //   setTimeout(event, 5000); 
-  // }else if (feed === true){
-  //  clearTimeout(event)
-  // }else  setTimeout(event, 5000)
+// if(feedDragon === true) {
+//     setTimeout(daveFired, 5000); 
+//   }
 
 
 
@@ -151,7 +150,7 @@ eggCracked.addEventListener(('click'), () => {
 // } 
 
 
-// if feed is true return normal
+// if feed is true/clicked return normal
 // if fire is true for 5 secs return dead
 // if feed is false return fire
 
@@ -171,7 +170,7 @@ eggCracked.addEventListener(('click'), () => {
 // needs to reset daveDead
 ////// can you add things in a class and call the class when items in that class are clicked on? that way reducing code size.
 
-// let to change event listner 
+// let to change event listener 
 
 // Array.from(elements).forEach(function(element) {
 //   element.addEventListener('click', myFunction);
@@ -199,3 +198,6 @@ eggCracked.addEventListener(('click'), () => {
 //   daveFired()
 //   console.log(fireImage);
 // });
+
+
+// window.setInterval(function, milliseconds);  - DAVE

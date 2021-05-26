@@ -17,12 +17,6 @@ if (localStorage.getItem('petName') === null) {
 localStorage.setItem('petName', 'My Pet')
 }
 
-//Get eyes to express status
-getEyes = document.getElementById('petEyes'),
-eyesOK = "o....o",
-eyesSick = "@....@",
-eyesDead = "x....x",
-
 //Clicking on a "Feed" button will restore vitamin and health to your pet.
 getBtnVM.addEventListener("click",function(){
 if(alive == true){
@@ -83,3 +77,23 @@ pet_info.happiness = pet_info.happiness + 1;
 pet_info.weight = pet_info.weight + 1;
 checkAndUpdatePetInfoInHtml();
 }
+
+const foodStock = [
+{ img: "🍕", name: "pizza", foodType: "junk", price: 2.5 },
+{ img: "🍔", name: "burger", foodType: "junk", price: 3 },
+{ img: "🍟", name: "fries", foodType: "junk", price: 1 },
+{ img: "🌭", name: "hot dog", foodType: "junk", price: "1.5" },
+{ img: "🥗", name: "salad", foodType: "healthy", price: [2] },
+{ img: "🥙", name: "pita", foodType: "healthy", price: 0 },
+{ img: "🥪", name: "sandwich", foodType: "healthy", price: 3 },
+{ img: "🌯", name: "burrito", foodType: "healthy", price: 5 },
+{ img: "🥣", name: "soup", foodType: "healthy", price: 2 },
+];
+const foodContainer = document.getElementById("food-container");
+const generateHTML = foodArray => {
+const HTML = foodArray.map(food => {
+return `<div><p>${food.img}</p><p>${food.name}</p><p>${food.price}</p></div>`;
+});
+return HTML.join("");
+};
+foodContainer.innerHTML = generateHTML(foodStock);x
