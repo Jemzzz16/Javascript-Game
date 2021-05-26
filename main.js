@@ -63,15 +63,17 @@ eggNormal.addEventListener('click', () => {
     return firstCrack()
   }
 });
+let nextEggClick = 0
 eggSlightCrack.addEventListener('click', () => {
-  eggClick++
-  if (eggClick === 5) {
+  nextEggClick++
+  if (nextEggClick === 5) {
     secondCrack()
   }
 });
+let lastEggClick = 0
 eggCracked.addEventListener('click', () => {
-  eggClick++
-  if (eggClick === 2) {
+  lastEggClick++
+  if (lastEggClick === 2) {
     finalCrack()
   }
 });
