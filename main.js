@@ -19,7 +19,7 @@ const fire = document.querySelector('#firehim');
 const fireImage = document.querySelector('#davefire');
 
 
-
+////////////////////////////////////////////////////////////////////
 const removePicture = (element) => {
   element.style.zIndex = '1'
   element.style.opacity = '0'
@@ -28,17 +28,6 @@ const pictureOnTop = (element) => {
   element.style.zIndex = '3'
   element.style.opacity = '100%'
 }
-////////////////////////////////////////////////////////////////////
-
-// let i = 0
-// const eggBtn = document.querySelector('#egg-button')
-// for(i = 0; i < eggBtn.length; i++) {
-//   eggBtn.addEventListener(('click'), () => {
-//     firstCrack()
-//     console.log(firstCrack());
-//   })  
-// };
-
 ////////////////////////////////////////////////////////////////////
 // EGGS    
 const firstCrack = () => {
@@ -53,29 +42,25 @@ const finalCrack = () => {
   removePicture(eggDiv)
   pictureOnTop(dragonDiv)
 };
-
 ////////////////////////////////////////////////////////////////////
 /// EGG EVENTS
 let eggClick = 0
 eggNormal.addEventListener('click', () => {
   eggClick++
-  if (eggClick === 5) {
-    return firstCrack()
-  }
+  if (eggClick === 1) 
+  { firstCrack() }
 });
 let nextEggClick = 0
 eggSlightCrack.addEventListener('click', () => {
   nextEggClick++
-  if (nextEggClick === 5) {
-    secondCrack()
-  }
+  if (nextEggClick === 1) 
+  { secondCrack() }
 });
 let lastEggClick = 0
 eggCracked.addEventListener('click', () => {
   lastEggClick++
-  if (lastEggClick === 2) {
-    finalCrack()
-  }
+  if (lastEggClick === 1) 
+  { finalCrack() }
 });
 ////////////////////////////////////////////////////////////////////
 // DAVE MOOD
@@ -102,13 +87,14 @@ daveFired = () => {
   removePicture(fedImage)
   removePicture(loveImage)
   pictureOnTop(fireImage)
+  
 };
-// daveDead = () => {
-//   removePicture(fedImage)
-//   removePicture(fireImage)
-//   removePicture(loveImage)
-//   pictureOnTop(deadImage)
-// };
+daveDead = () => {
+  removePicture(fedImage)
+  removePicture(fireImage)
+  removePicture(loveImage)
+  pictureOnTop(deadImage)
+};
 // daveFlap = () => {
 //   removePicture(originalImage)
 //   removePicture(loveImage)
@@ -119,28 +105,29 @@ daveFired = () => {
 
 ////////////////////////////////////////////////////////////////////
 /// FEED + LOVE
-// eggCracked.addEventListener(('click'), () => {
-//   daveNormal()
-// });
-
-
-
-feed.addEventListener(('click'), () => {
+feed.addEventListener('click', () => {
+  clearTimeout(fireTimer)
   daveFed()
+  setTimeout(daveNormal, 1000)
 });
-love.addEventListener(('click'), () => {
+love.addEventListener('click', () => {
   daveLoved()
+  setTimeout(daveNormal, 1000)
 });
-
-
 ////////////////////////////////////////////////////////////////////
 
+// // in the example above, assign the result
+// const timeoutHandle = window.setTimeout(daveFired, 5000);
 
+// // in your click function, call clearTimeout
+// feed.clearTimeout(timeoutHandle);
+
+// // then call setTimeout again to reset the timer
+// timeoutHandle = window.setTimeout(daveFired, 5000);
 
 // if(feedDragon === true) {
 //     setTimeout(daveFired, 5000); 
 //   }
-
 
 
 // const fireUp = () => {
@@ -155,12 +142,6 @@ love.addEventListener(('click'), () => {
 // if feed is true/clicked return normal
 // if fire is true for 5 secs return dead
 // if feed is false return fire
-
-
-
-// eggCracked.addEventListener(('click'), () => {
-//   setTimeout(daveDead, 10000)
-// });
 
 
 // feed.addEventListener(('click'), () => {
