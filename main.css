@@ -6,6 +6,15 @@
 }
 
 body {
+  overflow: hidden;
+  background-color: #3DD0FF;
+  z-index: 0;
+}
+
+.background {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
   background-image: url("images/Background.png");
   background-size: cover;
   z-index: 1;

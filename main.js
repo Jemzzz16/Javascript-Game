@@ -20,7 +20,23 @@ const fireImage = document.querySelector('#davefire');
 
 let dragonFed = false
 let dragonLoved = false
+let dragonDead = false
 
+var fireTimer;
+let fireHandle = () => {
+  fireTimer = setTimeout(daveFired, 5000)
+};
+let fireStop = () => {
+  clearTimeout(fireTimer)
+};
+
+var deadTimer;
+let deadHandle = () => {
+  deadTimer = setTimeout(daveDead, 10000)
+};
+let deadStop = () => {
+  clearTimeout(deadTimer)
+};
 ////////////////////////////////////////////////////////////////////
 /// PICTURE CHANGES 
 const removePicture = (element) => {
@@ -73,6 +89,7 @@ daveNormal = () => {
   removePicture(loveImage)
   pictureOnTop(originalImage)
   fireHandle()
+  deadHandle()
 };
 daveFed = () => {
   removePicture(originalImage)
@@ -80,6 +97,7 @@ daveFed = () => {
   removePicture(loveImage)
   pictureOnTop(fedImage)
   fireStop()
+  deadStop()
 };
 daveLoved = () => {
   removePicture(originalImage)
@@ -108,28 +126,31 @@ daveDead = () => {
 //   pictureOnTop(flapImage)
 // };
 ////////////////////////////////////////////////////////////////////
-/// FEED + LOVE + FIRE
-var timer;
-let fireHandle = () => {
-  timer = setTimeout(daveFired, 5000)
-};
-let fireStop = () => {
-  clearTimeout(timer)
-};
+/// FEED + LOVE + FIRE + DEAD
+
+////////////////////////////////////////////////////////////////////
+
 
 eggCracked.addEventListener('click', () => {
+  dragonFed = false
   if (dragonFed = false) {
-    fireHandle() 
-  }else if (dragonFed = true) {
-    clearTimeout(fireHandle)
     fireHandle()
+    deadHandle() 
+  } if (dragonFed = true) {
+    fireStop()
+    fireHandle()
+    deadStop()
+    deadHandle()
   }
 });
+
 feed.addEventListener('click', () => {
   dragonFed = true
   if (dragonFed = true) {
-  daveFed()
-  setTimeout(daveNormal, 1000)
+    daveFed()
+    setTimeout(daveNormal, 1000)
+    fireStop()
+    deadStop()
   } 
 });
 love.addEventListener('click', () => {
