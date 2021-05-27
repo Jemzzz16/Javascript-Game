@@ -1,3 +1,4 @@
+
 const eggNormal = document.querySelector('#egg-normal')
 const eggSlightCrack = document.querySelector('#egg-slightly-cracked')
 const eggCracked = document.querySelector('#egg-cracked')
@@ -6,7 +7,7 @@ const eggDiv = document.querySelector('.egg-div')
 const dragonDiv = document.querySelector('.dragon-div')
 
 const originalImage = document.querySelector('#dave-normal')
-//const flapImage = document.querySelector('#daveflap')
+
 const deadImage = document.querySelector('#davedead')
 
 const feed = document.querySelector('#feedhim');
@@ -18,47 +19,58 @@ const loveImage = document.querySelector('#daveloved');
 const fire = document.querySelector('#firehim');
 const fireImage = document.querySelector('#davefire');
 
+const energy = document.querySelector('#energy')
+const flapImage = document.querySelector('#daveflap')
+
 const resetBtn = document.querySelector('#reset-button');
 
 let dragonFed = false
 let dragonLoved = false
 let dragonDead = false
+let dragonFly = false
 
+////////////////////////////////////////////////////////////////////
+/// TIMERS + GAME RESET
 var fireTimer;
+var deadTimer;
+
 let fireHandle = () => {
   fireTimer = setTimeout(daveFired, 5000)
 };
 let fireStop = () => {
   clearTimeout(fireTimer)
 };
-
-var deadTimer;
 let deadHandle = () => {
   deadTimer = setTimeout(daveDead, 10000)
 };
 let deadStop = () => {
   clearTimeout(deadTimer)
 };
-
 const resetGame = () => {
-  
   location.reload();
-}
+};
 resetBtn.addEventListener('click', () => {
  resetGame()
-})
+});
 
-  
 ////////////////////////////////////////////////////////////////////
 /// PICTURE CHANGES 
 const removePicture = (element) => {
   element.style.zIndex = '1'
   element.style.opacity = '0'
-}
+};
 const pictureOnTop = (element) => {
   element.style.zIndex = '3'
   element.style.opacity = '100%'
-}
+};
+const removeAllImages = () => {
+  removePicture(fedImage)
+  removePicture(fireImage)
+  removePicture(loveImage)
+  removePicture(originalImage)
+  removePicture(flapImage)
+};
+
 ////////////////////////////////////////////////////////////////////
 // EGGS    
 const firstCrack = () => {
@@ -74,36 +86,31 @@ const finalCrack = () => {
   pictureOnTop(dragonDiv)
 };
 
-const removeAllImages = () => {
-  removePicture(fedImage)
-  removePicture(fireImage)
-  removePicture(loveImage)
-  removePicture(originalImage)
-}
-
 ////////////////////////////////////////////////////////////////////
 /// EGG EVENTS
 let eggClick = 0
 eggNormal.addEventListener('click', () => {
   eggClick++
-  if (eggClick === 1) 
+  if (eggClick === 5) 
   { firstCrack() }
 });
 let nextEggClick = 0
 eggSlightCrack.addEventListener('click', () => {
   nextEggClick++
-  if (nextEggClick === 1) 
+  if (nextEggClick === 5) 
   { secondCrack() }
 });
 let lastEggClick = 0
 eggCracked.addEventListener('click', () => {
   lastEggClick++
-  if (lastEggClick === 1) 
+  if (lastEggClick === 8) 
   { finalCrack() }
 });
+
 ////////////////////////////////////////////////////////////////////
 // DAVE MOOD
 daveNormal = () => {
+  removePicture(flapImage)
   removePicture(fedImage)
   removePicture(fireImage)
   removePicture(loveImage)
@@ -112,6 +119,7 @@ daveNormal = () => {
   deadHandle()
 };
 daveFed = () => {
+  removePicture(flapImage)
   removePicture(originalImage)
   removePicture(fireImage)
   removePicture(loveImage)
@@ -120,19 +128,32 @@ daveFed = () => {
   deadStop()
 };
 daveLoved = () => {
+  removePicture(flapImage)
   removePicture(originalImage)
   removePicture(fireImage)
   removePicture(fedImage)
   pictureOnTop(loveImage)
+  fireStop()
+  deadStop()
+};
+daveFlap = () => {
+  removePicture(originalImage)
+  removePicture(loveImage)
+  removePicture(fedImage)
+  removePicture(fireImage)
+  pictureOnTop(flapImage)
+  fireStop()
+  deadStop()
 };
 daveFired = () => {
+  removePicture(flapImage)
   removePicture(originalImage)
   removePicture(fedImage)
   removePicture(loveImage)
   pictureOnTop(fireImage)
-  
 };
 daveDead = () => {
+  removePicture(flapImage)
   removePicture(fedImage)
   removePicture(fireImage)
   removePicture(loveImage)
@@ -140,14 +161,9 @@ daveDead = () => {
   resetBtn.style.opacity = '100'
   feed.parentNode.removeChild(feed)
   love.parentNode.removeChild(love)
+  energy.parentNode.removeChild(energy)
 };
-// daveFlap = () => {
-//   removePicture(originalImage)
-//   removePicture(loveImage)
-//   removePicture(fedImage)
-//   removePicture(fireImage)
-//   pictureOnTop(flapImage)
-// };
+
 ////////////////////////////////////////////////////////////////////
 /// FEED + LOVE + FIRE + DEAD
 eggCracked.addEventListener('click', () => {
@@ -162,7 +178,6 @@ eggCracked.addEventListener('click', () => {
     deadHandle()
   }
 });
-
 feed.addEventListener('click', () => {
   dragonFed = true
   if (dragonFed = true) {
@@ -172,7 +187,6 @@ feed.addEventListener('click', () => {
     deadStop()
   } 
 });
-
 love.addEventListener('click', () => {
   dragonLoved = true
   if (dragonLoved = true) {
@@ -180,35 +194,20 @@ love.addEventListener('click', () => {
   setTimeout(daveNormal, 1000)
   }
 });
-
+energy.addEventListener('click', () => {
+  dragonFly = true
+  if (dragonFly = true) {
+  daveFlap()
+  setTimeout(daveNormal, 1000)
+  }
+});
 
 ////////////////////////////////////////////////////////////////////
-
-// if(feedDragon === true) {
-//     setTimeout(daveFired, 5000); 
-//   }
-
-
-// const fireUp = () => {
-//   if(fireUp === true) {
-//     fireUp()
-//   }else if (feed === true) {
-//     clearTimeout(fireUp)
-//   }
-// } 
-
 
 // if feed is true/clicked return normal
 // if fire is true for 5 secs return dead
 // if feed is false return fire
 
-
-// feed.addEventListener(('click'), () => {
-//   if (daveFed === true){
-//     clearTimeout(resetFire)
-//   } else if (daveDead === true)
-//     setTimeout(resetDead)
-// });
 // needs to reset daveDead
 ////// can you add things in a class and call the class when items in that class are clicked on? that way reducing code size.
 
@@ -226,20 +225,3 @@ love.addEventListener('click', () => {
 //   } else if (daveFired === true)
 //   clearTimeout()
 // }
-
-
-// const alertFunc = () => {
-//   alert("FEED ME");
-// }
-
-// setInterval(daveFlap(), 3*1000);
-
-// setTimeout(daveFired(), 5*1000);
-
-// fire.addEventListener(('click'), (event) => {
-//   daveFired()
-//   console.log(fireImage);
-// });
-
-
-// window.setInterval(function, milliseconds);  - DAVE
