@@ -1,22 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
-
 * {
-    padding: 0;
-    margin: 0;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-touch-callout: none;
+	/* iOS Safari */
+	-webkit-user-select: none;
+	/* Safari */
+	-khtml-user-select: none;
+	/* Konqueror HTML */
+	-moz-user-select: none;
+	/* Old versions of Firefox */
+	-ms-user-select: none;
+	/* Internet Explorer/Edge */
+	user-select: none;
     font-family: 'Indie Flower', cursive;
-}  
+}
 
 body {
-    overflow: hidden;
-    background-color: #3DD0FF;
-    z-index: 0;
+	margin: 0;
+	background-color: #83caec;
+	box-sizing: border-box;
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+    z-index: -120;
 }
-.background {
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    background-image: url('images/Background.png');
-    background-size: cover;
-    z-index: 1;
-}
+
+

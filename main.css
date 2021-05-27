@@ -1,23 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
   font-family: "Indie Flower", cursive;
 }
 
 body {
-  overflow: hidden;
-  background-color: #3DD0FF;
-  z-index: 0;
-}
-
-.background {
-  position: absolute;
+  margin: 0;
+  background-color: #83caec;
+  box-sizing: border-box;
   height: 100vh;
   width: 100%;
-  background-image: url("images/Background.png");
-  background-size: cover;
-  z-index: 1;
+  overflow: hidden;
+  z-index: -120;
+}
+
+#c {
+  position: relative;
+  z-index: -100;
 }
 
 .heading h1 {
@@ -92,7 +104,18 @@ body {
   opacity: 0;
 }
 
+.cloud-background {
+  position: absolute;
+  height: 100vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .heading {
+  position: relative;
   height: 120px;
   width: auto;
   display: flex;
@@ -102,6 +125,7 @@ body {
 }
 
 .images {
+  position: relative;
   height: 270px;
   width: auto;
   display: flex;
@@ -109,36 +133,47 @@ body {
   align-items: center;
 }
 
+.viewer {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: -100;
+}
+
 .egg-div {
+  position: absolute;
   height: 150px;
   width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
 }
 
 .dragon-div {
+  position: relative;
   height: 250px;
   width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
 }
 
 .buttons {
+  position: relative;
   height: 80px;
   width: auto;
-  position: relative;
   display: flex;
   justify-content: center;
 }
 
 .reset {
+  position: relative;
   height: 80px;
   width: auto;
-  position: relative;
   display: flex;
   justify-content: center;
 }
