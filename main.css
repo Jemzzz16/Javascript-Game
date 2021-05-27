@@ -84,6 +84,17 @@ body {
   width: auto;
 }
 
+.reset button {
+  height: 50px;
+  width: 100px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  opacity: 0;
+}
+
 .heading {
   height: 120px;
   width: auto;
@@ -94,7 +105,7 @@ body {
 }
 
 .images {
-  height: 300px;
+  height: 270px;
   width: auto;
   display: flex;
   justify-content: center;
@@ -120,6 +131,14 @@ body {
 }
 
 .buttons {
+  height: 80px;
+  width: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.reset {
   height: 80px;
   width: auto;
   position: relative;

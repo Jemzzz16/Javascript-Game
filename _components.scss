@@ -58,3 +58,16 @@
     width: auto;
   }
 }
+
+.reset {
+  button {
+    height: 50px;
+    width: 100px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    opacity: 0;
+  }
+}

@@ -8,21 +8,12 @@
 }
 
 .images {
-  height: 300px;
+  height: 270px;
   width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
-// .dragon-images {
-//   height: 250px;
-//   width: auto;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
 .egg-div {
   height: 150px;
   width: auto;
@@ -42,6 +33,14 @@
 }
 
 .buttons {
+  height: 80px;
+  width: auto;  
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.reset {
   height: 80px;
   width: auto;  
   position: relative;

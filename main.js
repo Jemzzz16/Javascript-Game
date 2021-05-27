@@ -12,11 +12,13 @@ const deadImage = document.querySelector('#davedead')
 const feed = document.querySelector('#feedhim');
 const fedImage = document.querySelector('#davefed');
 
-const love = document.querySelector('#dave-normal');
+const love = document.querySelector('#lovehim');
 const loveImage = document.querySelector('#daveloved');
 
 const fire = document.querySelector('#firehim');
 const fireImage = document.querySelector('#davefire');
+
+const resetBtn = document.querySelector('#reset-button');
 
 let dragonFed = false
 let dragonLoved = false
@@ -37,6 +39,16 @@ let deadHandle = () => {
 let deadStop = () => {
   clearTimeout(deadTimer)
 };
+
+const resetGame = () => {
+  
+  location.reload();
+}
+resetBtn.addEventListener('click', () => {
+ resetGame()
+})
+
+  
 ////////////////////////////////////////////////////////////////////
 /// PICTURE CHANGES 
 const removePicture = (element) => {
@@ -125,7 +137,9 @@ daveDead = () => {
   removePicture(fireImage)
   removePicture(loveImage)
   pictureOnTop(deadImage)
+  resetBtn.style.opacity = '100'
   feed.parentNode.removeChild(feed)
+  love.parentNode.removeChild(love)
 };
 // daveFlap = () => {
 //   removePicture(originalImage)
