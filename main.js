@@ -83,6 +83,7 @@ const secondCrack = () => {
 const finalCrack = () => {
   removePicture(eggDiv)
   pictureOnTop(dragonDiv)
+  interactiveBtns.style.opacity = '100'
 };
 
 ////////////////////////////////////////////////////////////////////

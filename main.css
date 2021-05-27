@@ -80,6 +80,9 @@ body {
   margin-top: 70px;
 }
 
+.buttons {
+  opacity: 0;
+}
 .buttons input {
   height: 80%;
   width: auto;
