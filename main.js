@@ -61,6 +61,14 @@ const finalCrack = () => {
   removePicture(eggDiv)
   pictureOnTop(dragonDiv)
 };
+
+const removeAllImages = () => {
+  removePicture(fedImage)
+  removePicture(fireImage)
+  removePicture(loveImage)
+  removePicture(originalImage)
+}
+
 ////////////////////////////////////////////////////////////////////
 /// EGG EVENTS
 let eggClick = 0
@@ -117,6 +125,7 @@ daveDead = () => {
   removePicture(fireImage)
   removePicture(loveImage)
   pictureOnTop(deadImage)
+  feed.parentNode.removeChild(feed)
 };
 // daveFlap = () => {
 //   removePicture(originalImage)
@@ -127,10 +136,6 @@ daveDead = () => {
 // };
 ////////////////////////////////////////////////////////////////////
 /// FEED + LOVE + FIRE + DEAD
-
-////////////////////////////////////////////////////////////////////
-
-
 eggCracked.addEventListener('click', () => {
   dragonFed = false
   if (dragonFed = false) {
@@ -153,6 +158,7 @@ feed.addEventListener('click', () => {
     deadStop()
   } 
 });
+
 love.addEventListener('click', () => {
   dragonLoved = true
   if (dragonLoved = true) {
@@ -160,6 +166,8 @@ love.addEventListener('click', () => {
   setTimeout(daveNormal, 1000)
   }
 });
+
+
 ////////////////////////////////////////////////////////////////////
 
 // if(feedDragon === true) {
