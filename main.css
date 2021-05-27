@@ -8,7 +8,7 @@
   -webkit-user-select: none;
   /* Safari */
   -khtml-user-select: none;
-  /* Konqueror HTML */
+  /* Conqueror HTML */
   -moz-user-select: none;
   /* Old versions of Firefox */
   -ms-user-select: none;
@@ -43,47 +43,40 @@ body {
 .egg-div {
   opacity: 100%;
 }
-
-.dragon-div {
+.egg-div .egg {
+  position: absolute;
   opacity: 0;
 }
-
-#egg-normal {
+.egg-div #egg-normal {
   position: absolute;
   opacity: 100%;
   z-index: 3;
 }
-
-#egg-slightly-cracked {
+.egg-div #egg-slightly-cracked {
   position: absolute;
   opacity: 0;
   z-index: 2;
 }
-
-#egg-cracked {
+.egg-div #egg-cracked {
   position: absolute;
   opacity: 0;
   z-index: 1;
 }
 
-.egg {
-  position: absolute;
+.dragon-div {
   opacity: 0;
 }
-
-#dave-normal {
+.dragon-div .dave {
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+}
+.dragon-div #dave-normal {
   position: absolute;
   opacity: 100%;
   z-index: 2;
 }
-
-.dave {
-  position: absolute;
-  opacity: 0;
-  z-index: 1;
-}
-
-#davedead {
+.dragon-div #davedead {
   margin-top: 70px;
 }
 

@@ -8,7 +8,7 @@
 
 <p>
 
-Virtual pet that doesnt decrease in health but you can over feed it
+Virtual pet that doesn't decrease in health but you can over feed it
 
 - this will save on 'complicated' timer functions
 
@@ -77,3 +77,24 @@ pet_info.happiness = pet_info.happiness + 1;
 pet_info.weight = pet_info.weight + 1;
 checkAndUpdatePetInfoInHtml();
 }
+
+// if feed is true/clicked return normal
+// if fire is true for 5 secs return dead
+// if feed is false return fire
+
+// needs to reset daveDead
+////// can you add things in a class and call the class when items in that class are clicked on? that way reducing code size.
+
+// let to change event listener
+
+// Array.from(elements).forEach(function(element) {
+// element.addEventListener('click', myFunction);
+// });
+
+//Clicking on a "Fed or fire" button will rest timer for fire and death
+// const resetDeath = () => {
+// if(daveNormal === true) {
+// clearTimeout()
+// } else if (daveFired === true)
+// clearTimeout()
+// }

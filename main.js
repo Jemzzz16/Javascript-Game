@@ -1,13 +1,12 @@
-
 const eggNormal = document.querySelector('#egg-normal')
 const eggSlightCrack = document.querySelector('#egg-slightly-cracked')
 const eggCracked = document.querySelector('#egg-cracked')
 
 const eggDiv = document.querySelector('.egg-div')
 const dragonDiv = document.querySelector('.dragon-div')
+const interactiveBtns = document.querySelector('.buttons')
 
 const originalImage = document.querySelector('#dave-normal')
-
 const deadImage = document.querySelector('#davedead')
 
 const feed = document.querySelector('#feedhim');
@@ -159,9 +158,7 @@ daveDead = () => {
   removePicture(loveImage)
   pictureOnTop(deadImage)
   resetBtn.style.opacity = '100'
-  feed.parentNode.removeChild(feed)
-  love.parentNode.removeChild(love)
-  energy.parentNode.removeChild(energy)
+  interactiveBtns.parentNode.removeChild(interactiveBtns)
 };
 
 ////////////////////////////////////////////////////////////////////
@@ -201,27 +198,3 @@ energy.addEventListener('click', () => {
   setTimeout(daveNormal, 1000)
   }
 });
-
-////////////////////////////////////////////////////////////////////
-
-// if feed is true/clicked return normal
-// if fire is true for 5 secs return dead
-// if feed is false return fire
-
-// needs to reset daveDead
-////// can you add things in a class and call the class when items in that class are clicked on? that way reducing code size.
-
-// let to change event listener 
-
-// Array.from(elements).forEach(function(element) {
-//   element.addEventListener('click', myFunction);
-// });
-
-
-//Clicking on a "Fed or fire" button will rest timer for fire and death
-// const resetDeath = () => {
-//   if(daveNormal === true) {
-//     clearTimeout()
-//   } else if (daveFired === true)
-//   clearTimeout()
-// }
