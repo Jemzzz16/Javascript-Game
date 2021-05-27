@@ -18,8 +18,11 @@ const loveImage = document.querySelector('#daveloved');
 const fire = document.querySelector('#firehim');
 const fireImage = document.querySelector('#davefire');
 
+let dragonFed = false
+let dragonLoved = false
 
 ////////////////////////////////////////////////////////////////////
+/// PICTURE CHANGES 
 const removePicture = (element) => {
   element.style.zIndex = '1'
   element.style.opacity = '0'
@@ -69,12 +72,14 @@ daveNormal = () => {
   removePicture(fireImage)
   removePicture(loveImage)
   pictureOnTop(originalImage)
+  fireHandle()
 };
 daveFed = () => {
   removePicture(originalImage)
   removePicture(fireImage)
   removePicture(loveImage)
   pictureOnTop(fedImage)
+  fireStop()
 };
 daveLoved = () => {
   removePicture(originalImage)
@@ -102,28 +107,39 @@ daveDead = () => {
 //   removePicture(fireImage)
 //   pictureOnTop(flapImage)
 // };
-
 ////////////////////////////////////////////////////////////////////
-/// FEED + LOVE
+/// FEED + LOVE + FIRE
+var timer;
+let fireHandle = () => {
+  timer = setTimeout(daveFired, 5000)
+};
+let fireStop = () => {
+  clearTimeout(timer)
+};
+
+eggCracked.addEventListener('click', () => {
+  if (dragonFed = false) {
+    fireHandle() 
+  }else if (dragonFed = true) {
+    clearTimeout(fireHandle)
+    fireHandle()
+  }
+});
 feed.addEventListener('click', () => {
-  clearTimeout(fireTimer)
+  dragonFed = true
+  if (dragonFed = true) {
   daveFed()
   setTimeout(daveNormal, 1000)
+  } 
 });
 love.addEventListener('click', () => {
+  dragonLoved = true
+  if (dragonLoved = true) {
   daveLoved()
   setTimeout(daveNormal, 1000)
+  }
 });
 ////////////////////////////////////////////////////////////////////
-
-// // in the example above, assign the result
-// const timeoutHandle = window.setTimeout(daveFired, 5000);
-
-// // in your click function, call clearTimeout
-// feed.clearTimeout(timeoutHandle);
-
-// // then call setTimeout again to reset the timer
-// timeoutHandle = window.setTimeout(daveFired, 5000);
 
 // if(feedDragon === true) {
 //     setTimeout(daveFired, 5000); 
